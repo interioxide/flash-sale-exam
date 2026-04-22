@@ -13,3 +13,4 @@ export enum PurchaseStatus {
 }
 
 export type PurchaseResult = { status: PurchaseStatus };
+
