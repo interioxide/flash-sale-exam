@@ -9,7 +9,8 @@ type SaleStatus = {
     remainingStock: number | null;
 };
 
-const apiBase = import.meta.env.VITE_API_URL ?? "";
+const apiBase = import.meta.env.API_BASE_URL ?? "";
+const timeZone = import.meta.env.TIMEZONE ?? "Asia/Manila";
 
 async function fetchJson<T>(path: string, init?: RequestInit): Promise<T> {
     const res = await fetch(`${apiBase}${path}`, {
@@ -87,7 +88,7 @@ export default function App(): JSX.Element {
                 method: "POST",
                 body: JSON.stringify({ userId }),
             });
-            setPurchaseNote("Success — your item is reserved.");
+            setPurchaseNote("Success - your order is reserved.");
             await refreshStatus();
         } catch (e: unknown) {
             const err = e as Error & {
@@ -197,22 +198,36 @@ export default function App(): JSX.Element {
                                 color: "#334155",
                             }}
                         >
-                            Remaining stock (best-effort):{" "}
+                            Remaining stock: {" "}
                             <strong>{status.remainingStock ?? "—"}</strong>
                         </div>
                     )}
 
                 <div style={{ marginTop: 12, fontSize: 13, color: "#64748b" }}>
                     <div>
-                        Starts:{" "}
+                        Starts:{" "} {}
                         {status
-                            ? new Date(status.startsAt).toLocaleString()
+                            ? new Date(status.startsAt).toLocaleString("en-US", {
+                                month: "short",
+                                day: "numeric",
+                                year: "numeric",
+                                hour: "numeric",
+                                minute: "2-digit",
+                                timeZone,
+                            })
                             : "—"}
                     </div>
                     <div>
                         Ends:{" "}
                         {status
-                            ? new Date(status.endsAt).toLocaleString()
+                            ? new Date(status.endsAt).toLocaleString("en-US", {
+                                month: "short",
+                                day: "numeric",
+                                year: "numeric",
+                                hour: "numeric",
+                                minute: "2-digit",
+                                timeZone,
+                            })
                             : "—"}
                     </div>
                 </div>

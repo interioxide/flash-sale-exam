@@ -96,6 +96,7 @@ RATE_LIMIT_MAX=10000
 2.) Make a copy of `web/.env.example` to `web/.env` from the web folder
 ```env
 API_BASE_URL=http://127.0.0.1:3001
+TIMEZONE=Asia/Manila
 ```
 
 ---
