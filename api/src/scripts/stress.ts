@@ -1,6 +1,5 @@
 /**
- * Load generator: run the API first, then:
- *   cd api && npm run test:stress -- http://localhost:3001 500 40
+ * Load generator: run the API first, then: cd api && npm run test:stress -- http://localhost:3001 500 40
  *
  * Args: baseUrl totalRequests concurrency
  */

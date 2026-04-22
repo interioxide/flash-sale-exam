@@ -13,8 +13,8 @@ export function createApp(service: FlashSaleService): express.Application {
 
     app.use(
         rateLimit({
-            windowMs: config.rateLimit.windowMs,
-            max: config.rateLimit.max,
+            windowMs: config.rateLimit.windowMs, // In milliseconds
+            limit: config.rateLimit.max, // Limit each IP  per `window`
             standardHeaders: true,
             legacyHeaders: false,
         }),

@@ -75,7 +75,9 @@ describe("Flash sale HTTP API", () => {
             .send({ amount: 0 })
             .expect(400)
             .expect((res) => {
-                expect(res.body.error).toBe("amount must be a positive integer");
+                expect(res.body.error).toBe(
+                    "amount must be a positive integer",
+                );
             });
     });
 

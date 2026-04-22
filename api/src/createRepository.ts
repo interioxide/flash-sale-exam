@@ -9,7 +9,6 @@ const USER_PREFIX = "flash:sale:user:v1";
 export async function createRepository(
     getNow: () => Date,
 ): Promise<FlashSaleRepository> {
-
     const redis = new Redis(config.redisUrl, {
         maxRetriesPerRequest: 3,
         retryStrategy(times: number) {

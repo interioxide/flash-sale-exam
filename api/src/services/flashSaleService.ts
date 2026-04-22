@@ -59,10 +59,8 @@ export class FlashSaleService {
 
     private phaseAt(now: Date): SalePhase {
         const t = now.getTime();
-        if (t < this.saleStart.getTime()) 
-            return SalePhase.Upcoming;
-        if (t > this.saleEnd.getTime()) 
-            return SalePhase.Ended;
+        if (t < this.saleStart.getTime()) return SalePhase.Upcoming;
+        if (t > this.saleEnd.getTime()) return SalePhase.Ended;
         return SalePhase.Active;
     }
 

@@ -115,14 +115,14 @@ export default function App(): JSX.Element {
                     msg = "Sale has ended.";
                     break;
                 default:
-                    msg = (
+                    msg =
                         (typeof err.body === "object" &&
                         err.body !== null &&
                         "message" in err.body &&
-                        typeof (err.body as { message?: string }).message === "string"
+                        typeof (err.body as { message?: string }).message ===
+                            "string"
                             ? (err.body as { message: string }).message
-                            : null) ?? "Could not complete purchase."
-                    );
+                            : null) ?? "Could not complete purchase.";
             }
             setPurchaseNote(msg);
         } finally {
@@ -152,7 +152,7 @@ export default function App(): JSX.Element {
             <header style={{ marginBottom: 24 }}>
                 <h1 style={{ margin: "0 0 8px", fontSize: 28 }}>Flash Sale</h1>
                 <p style={{ margin: 0, color: "#475569" }}>
-                   One unit per identity, limited stock.
+                    One unit per identity, limited stock.
                 </p>
             </header>
 
@@ -234,7 +234,7 @@ export default function App(): JSX.Element {
                         marginBottom: 6,
                     }}
                 >
-                   Customer 
+                    Customer
                 </label>
                 <input
                     value={userId}

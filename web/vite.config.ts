@@ -12,8 +12,8 @@ export default defineConfig(({ mode }) => {
                 "/api": {
                     target: env.API_BASE_URL || "",
                     changeOrigin: true,
-                }
+                },
             },
-        }
-    }
+        },
+    };
 });

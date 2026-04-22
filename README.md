@@ -1,4 +1,4 @@
-# Flash Sale — High-Throughput Demo
+# Flash Sale - High-Throughput
 
 A single-product flash sale API with **inventory**, **per-user limits**, and a React UI.
 
@@ -113,7 +113,6 @@ docker compose up -d
 ```bash
 cd api
 npm install
-cp .env.example .env   # copy and edit as needed
 npm run dev
 ```
 

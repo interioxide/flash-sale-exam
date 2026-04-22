@@ -18,7 +18,9 @@ export function createSaleRouter(service: FlashSaleService): Router {
             !Number.isInteger(amount) ||
             amount < 1
         ) {
-            res.status(400).json({ error: "amount must be a positive integer" });
+            res.status(400).json({
+                error: "amount must be a positive integer",
+            });
             return;
         }
 

@@ -1,6 +1,10 @@
 import { FlashSaleService } from "../../services/flashSaleService";
 import type { FlashSaleRepository } from "../../repos/flashSaleRepository";
-import { PurchaseStatus, type PurchaseResult, SalePhase } from "../../domain/types";
+import {
+    PurchaseStatus,
+    type PurchaseResult,
+    SalePhase,
+} from "../../domain/types";
 
 function mockRepo(
     overrides: Partial<FlashSaleRepository> = {},
@@ -82,7 +86,9 @@ describe("FlashSaleService", () => {
     it("purchase attempts to the repository", async () => {
         const attempt = jest
             .fn()
-            .mockResolvedValue({ status: PurchaseStatus.Success } satisfies PurchaseResult);
+            .mockResolvedValue({
+                status: PurchaseStatus.Success,
+            } satisfies PurchaseResult);
         const service = new FlashSaleService(
             mockRepo({ attemptPurchase: attempt }),
             now,
