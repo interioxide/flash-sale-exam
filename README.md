@@ -54,7 +54,7 @@ The **Lua script** runs all at once in Redis, so other requests can’t interrup
 ┌─────────────┐          ┌──────────────────────────┐        ┌────────────────────────┐
 │   Clients   │          │        API Layer         │        │   Inventory & State    │
 │             │          │                          │        │                        │
-│  React UI   │ - HTTP ─▶│  Rate Limiter (per-IP)   │ --─-─▶ │   Redis + Lua Script   │
+│  React UI   │ - HTTP ─▶│  Rate Limiter (per-IP)   │ -----▶ │   Redis + Lua Script   │
 |   (Web)     |  Request |                          │        |                        |
 └─────────────┘          └──────────────────────────┘        └────────────────────────┘
                                                            
