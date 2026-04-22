@@ -1,4 +1,4 @@
-# [High-Throughput Flash Sale System](https://github.com/interioxide/flash-sale-exam)
+# High-Throughput Flash Sale System
 
 A single-product flash sale API with **inventory**, **per-user limits**, and a React UI.
 
