@@ -104,7 +104,7 @@ export default function App(): JSX.Element {
             let msg = "";
             switch (reason) {
                 case PurchaseStatus.AlreadyPurchased:
-                    msg = "You already secured an item.";
+                    msg = "You already secured an order.";
                     break;
                 case PurchaseStatus.SoldOut:
                     msg = "Sold out.";
